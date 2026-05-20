@@ -92,6 +92,7 @@ describe('Basic user flow for Website', () => {
 
     //get all items
     const prodItems = await page.$$('product-item');
+    for (let i = 0; i < prodItems.length; i++) {
       const shadowRoot = await prodItems[i].getProperty('shadowRoot');
       const button = await shadowRoot.$('button');
       const innerText = await button.getProperty('innerText');
